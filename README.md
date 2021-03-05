@@ -13,5 +13,5 @@ Then run the command in CLI to interact with bot
 
 # rasa shell
 
-Note: We have to install rasa and spacy language model dependcies.
+Note: We have to install rasa and spacy language model dependecies.
 
