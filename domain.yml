@@ -6,6 +6,7 @@ intents:
   - deny
   - employee_name
   - employee_id
+  - credit_card_number
   - card_application
   - available_card_limit
   - increase_card_limit
@@ -38,11 +39,17 @@ actions:
   - action_CardRenewal
   - action_CardBillingAddress
   - action_CardPolicy
+  - utter_credit_card_number
   - utter_goodbye
 
 entities:
   - name
   - id
+  - card_number
+
+slots:
+   card_number:
+    type: text
 
 forms:
   card_registration_form:
@@ -57,12 +64,18 @@ responses:
   utter_greet:
   - text: "Hi, how do I help you?"
 
+  utter_credit_card_number:
+  - text: "Please enter your card number"
+  
   utter_continue:
-  - text: "Do you need anything else? Yes or No"  
+  - text: "What do you want to know?"  
 
   utter_deny:
   - text: "Thanks for visiting"
-
+  
+  utter_default:
+    - text: "Sorry, I didn't get that, can you rephrase?"
+    
   utter_goodbye:
   - text: "Bye"
 

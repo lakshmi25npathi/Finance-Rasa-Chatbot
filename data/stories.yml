@@ -17,4 +17,4 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: deny
-  - action: utter_goodbye
+  - action: utter_deny

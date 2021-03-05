@@ -2,7 +2,7 @@ version: "2.0"
 
 nlu:
 - intent: card_registeration
-  examples:
+  examples: |
      - I want to register card 
      - I want to do card registeration 
      - I would like to register corporate card
@@ -14,7 +14,7 @@ nlu:
      - I would like to do card account registeration
      
 - intent: card_activation
-  examples:
+  examples: |
      - I want to activate my card 
      - card activation 
      - I would like to activate my card
@@ -25,7 +25,7 @@ nlu:
      - card verification
      
 - intent: card_PIN_reset
-  examples:
+  examples: |
      - Please setup card PIN 
      - Can you reset my card PIN?
      - I would like to setup my card PIN

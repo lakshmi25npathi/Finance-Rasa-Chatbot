@@ -2,7 +2,7 @@ version: "2.0"
 
 nlu:
 - intent: lost_stolen_card
-  examples:
+  examples: |
      - I lost my card 
      - I lost a card 
      - My card got stolen 
@@ -11,7 +11,7 @@ nlu:
      - lost card
      
 - intent: frudulent_charges
-  examples: 
+  examples: |
      - I want to know about my card unauthorized charges 
      - Please let me know unauthorized charges for my card 
      - I would like to know about fraud charges for my card

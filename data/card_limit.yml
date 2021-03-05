@@ -1,34 +1,55 @@
 version: "2.0"
-
 nlu:
 - intent: available_card_limit
-  examples:
-     - I would like to know about my current card limit
-     - I want to know my available card limit 
-     - Let me know my current card limit
-     - I want to know my current card limit 
-     - Let me know my available card limit
-     - I would like to know about my available card limit 
-     - Could you tell me my current card limit?
-     - Could you tell me my available card limit? 
-     - Can I know my current card limit?
-     - Can I know my available card limit?
-
-- intent: 
-  examples: increase_card_limit
-     - I would like to increase my credit card limit 
-     - I want to increase my card limit 
-     - I would like to increase my card limit
-     - Could you change my card limit?
-     - I want to raise my current card limit 
-     - Please change my credit card limit
-     - I want to increase my credit card limit 
-     - I would like to raise my credit card limit 
-     - Could you increase my card limit?
-     - Could you raise my credit card limit? 
-     - I would like to change my credit card limit
-     - Please increase my credit card limit 
-     - Please raise my credit card limit 
-     - I want to change my card limit 
-     - I would like to change my card limit
-     
+  examples: |
+    - I would like to know about my current card limit
+    - I want to know about my available card limit
+    - Let me know my current card limit
+    - I want to know my current card limit
+    - Let me know my available card limit
+    - I would like to know about my available card limit
+    - Could you tell me my current card limit?
+    - Could you tell me my available card limit?
+    - Can I know my current card limit?
+    - Can I know my available card limit?
+    - I would like to know about my credit card limit
+    - I want to know about my card limit
+    - I want to know about credit card limit
+- intent: increase_card_limit
+  examples: |
+    - I would like to increase my credit card limit
+    - I want to increase my card limit
+    - I would like to increase my card limit
+    - Could you change my card limit?
+    - I want to raise my current card limit
+    - Please change my credit card limit
+    - I want to increase my credit card limit
+    - I would like to raise my credit card limit
+    - Could you increase my card limit?
+    - Could you raise my credit card limit?
+    - I would like to change my credit card limit
+    - Please increase my credit card limit
+    - Please raise my credit card limit
+    - I want to change my card limit
+    - I would like to change my card limit
+    - I want to increase my credit limit
+    - I would like to increase card limit
+- intent: greet
+  examples: |
+    - hi
+- intent: credit_card_number
+  examples: |
+    - [2345365478](card_number)
+    - [2347636383](card_number)
+    - [2436547687](card_number)
+    - [2347533766](card_number)
+    - [2234346543](card_number)
+    - [2453265432](card_number)
+    - [2345765437](card_number)
+    - [2345427622](card_number)
+- intent: continue
+  examples: |
+    - yes
+- intent: deny
+  examples: |
+    - no

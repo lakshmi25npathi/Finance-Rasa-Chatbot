@@ -1,16 +1,25 @@
 version: "2.0"
-
 nlu:
 - intent: card_application
-  examples:
-     - I want to apply for a card
-     - I need a card
-     - How to apply for a card
-     - I want to apply for new card
-     - I need a new card
-     - How to apply for a new card?
-     - Could you tell me how to apply for a card?
-     - I would like to apply for a new card
-     - Please tell me how to apply for a card
-     - Let me know how to apply for a new card
-     - Please tell me procedure for card application
+  examples: |
+    - I want to apply for a card
+    - I need a card
+    - How to apply for a card
+    - I want to apply for new card
+    - I need a new card
+    - How to apply for a new card?
+    - Could you tell me how to apply for a card?
+    - I would like to apply for a new card
+    - Please tell me how to apply for a card
+    - Let me know how to apply for a new card
+    - Please tell me procedure for card application
+    - I want to apply for card
+- intent: greet
+  examples: |
+    - hi
+- intent: continue
+  examples: |
+    - yes
+- intent: deny
+  examples: |
+    - no

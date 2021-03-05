@@ -2,7 +2,7 @@ version: "2.0"
 
 nlu:
 - intent: card_payment
-  examples:
+  examples: |
      - I want to use this card for my personal 
      - How to make a payment for my personal usage?
      - How to make a personal payment?
@@ -13,7 +13,7 @@ nlu:
      - personal payment 
 
 - intent: card_history
-  examples:
+  examples: |
      - I want to know about my card history
      - card history
      - card activity 
@@ -26,7 +26,7 @@ nlu:
      - I would like to know about my card activities
 
 - intent: card_replacement 
-  examples:
+  examples: |
      - I want to renew my card 
      - my card got expired
      - My card would expire soon
@@ -41,7 +41,7 @@ nlu:
      - I would like to get new card
 
 - intent: card_billing_address
-  examples:
+  examples: |
      - I want to update my card address
      - address
      - update address
@@ -53,7 +53,7 @@ nlu:
      - Can you update billing address?
 
 - intent: card_policy
-  examples:
+  examples: |
      - I want to know about card policy 
      - card for policy
      - card policy

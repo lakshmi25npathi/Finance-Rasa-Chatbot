@@ -9,9 +9,28 @@ stories:
     intent: greet
   - action: utter_greet
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+      I want to apply for card 
+    intent: card_application
+  - action: action_card_application
+  - user: |
+      yes
+    intent: continue
+  - action: utter_continue
+
+- story: sad path 1
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      I want to apply for card 
+    intent: card_application
+  - action: action_card_application
+  - user: |
+      no
+    intent: deny
+  - action: utter_deny
 
 - story: happy path 2
   steps:
@@ -20,72 +39,58 @@ stories:
     intent: greet
   - action: utter_greet
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+      I want to know about my card limit 
+    intent: available_card_limit
+  - action: utter_credit_card_number
   - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
-
-- story: sad path 1
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
+      2347645445
+    intent: card_number
+  - action: action_CardLimit
   - user: |
       yes
-    intent: affirm
-  - action: utter_happy
+    intent: continue
+  - action: utter_continue
+  - user: |
+      I want to increase my card limit 
+    intent: increase_card_limit
+  - action: utter_credit_card_number
+  - user: |
+      2347645445
+    intent: card_number
+  - action: action_RiseCardLimit
+  - user: |
+      yes
+    intent: continue
+  - action: utter_continue
 
 - story: sad path 2
   steps:
   - user: |
-      hello
+      hello there!
     intent: greet
   - action: utter_greet
   - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
+      I want to know about my card limit 
+    intent: available_card_limit
+  - action: utter_credit_card_number
   - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
-
-- story: sad path 3
-  steps:
+      2347645445
+    intent: card_number
+  - action: action_CardLimit
   - user: |
-      hi
-    intent: greet
-  - action: utter_greet
+      yes
+    intent: continue
+  - action: utter_continue
   - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
+      I want to increase my card limit 
+    intent: increase_card_limit
+  - action: utter_credit_card_number
+  - user: |
+      2347645445
+    intent: card_number
+  - action: action_RiseCardLimit
   - user: |
       no
     intent: deny
-  - action: utter_goodbye
+  - action: utter_deny
 
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
-
-- story: bot challenge
-  steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot

@@ -1,0 +1,102 @@
+
+version: "2.0"
+stories:
+- story: interactive_story_1654
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: available_card_limit
+  - action: utter_credit_card_number
+  - intent: credit_card_number
+    entities:
+    - card_number: '2234346543'
+  - slot_was_set:
+    - card_number: '2234346543'
+  - action: action_CardLimit
+  - intent: continue
+  - action: utter_continue
+  - intent: increase_card_limit
+  - action: utter_credit_card_number
+  - intent: credit_card_number
+    entities:
+    - card_number: '2453265432'
+  - slot_was_set:
+    - card_number: '2453265432'
+  - action: action_RiseCardLimit
+  - intent: continue
+  - action: utter_continue
+
+- story: interactive_story_18743
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: available_card_limit
+  - action: utter_credit_card_number
+  - intent: credit_card_number
+    entities:
+    - card_number: '2234346543'
+  - slot_was_set:
+    - card_number: '2234346543'
+  - action: action_CardLimit
+  - intent: continue
+  - action: utter_continue
+  - intent: increase_card_limit
+  - action: utter_credit_card_number
+  - intent: credit_card_number
+    entities:
+    - card_number: '2453265432'
+  - slot_was_set:
+    - card_number: '2453265432'
+  - action: action_RiseCardLimit
+  - intent: deny
+  - action: utter_deny
+
+- story: interactive_story_17654
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: available_card_limit
+  - action: utter_credit_card_number
+  - intent: credit_card_number
+    entities:
+    - card_number: '2345765437'
+  - slot_was_set:
+    - card_number: '2345765437'
+  - action: action_CardLimit
+  - intent: continue
+  - action: utter_continue
+  - intent: increase_card_limit
+  - action: utter_credit_card_number
+  - intent: credit_card_number
+    entities:
+    - card_number: '2345427622'
+  - slot_was_set:
+    - card_number: '2345427622'
+  - action: action_RiseCardLimit
+  - intent: continue
+  - action: utter_continue
+
+- story: interactive_story_176564
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: available_card_limit
+  - action: utter_credit_card_number
+  - intent: credit_card_number
+    entities:
+    - card_number: '2345765437'
+  - slot_was_set:
+    - card_number: '2345765437'
+  - action: action_CardLimit
+  - intent: continue
+  - action: utter_continue
+  - intent: increase_card_limit
+  - action: utter_credit_card_number
+  - intent: credit_card_number
+    entities:
+    - card_number: '2345427622'
+  - slot_was_set:
+    - card_number: '2345427622'
+  - action: action_RiseCardLimit
+  - intent: deny
+  - action: utter_deny

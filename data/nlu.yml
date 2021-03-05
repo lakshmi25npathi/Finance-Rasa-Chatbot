@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +28,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: deny
   examples: |
     - no
@@ -40,7 +37,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: continue
   examples: |
     - yes
@@ -48,7 +44,6 @@ nlu:
     - yes thanks
     - yeah
     - haa
-
 - intent: employee_name
   examples: |
     - [Joseph](name)
@@ -57,7 +52,6 @@ nlu:
     - [Bannu](name)
     - [Baby](name)
     - [Jack](name)
-
 - intent: employee_id
   examples: |
     - [245](id)
@@ -66,4 +60,14 @@ nlu:
     - [287](id)
     - [291](id)
     - [298](id)
-    
+
+- intent: credit_card_number
+  examples: |
+    - [2209293323](card_number)
+    - [2239383384](card_number)
+    - [2340772345](card_number)
+    - [2234873923](card_number)
+    - [2234763434](card_number)
+    - [2348726367](card_number)
+    - [2243947473](card_number)
+

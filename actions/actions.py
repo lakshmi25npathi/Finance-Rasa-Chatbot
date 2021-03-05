@@ -6,6 +6,7 @@
 
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
+from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 
 # Corporate Card
@@ -20,7 +21,7 @@ class ActionCardApplication(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
 
-        dispatcher.utter_message(text="Your card application has been recieved")
+        dispatcher.utter_message(text="Your card application has been recieved. Do you need anything else? Please enter yes or no?")
 
         return []
 
@@ -36,9 +37,10 @@ class ActionCardLimit(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
 
-        dispatcher.utter_message(text="Your card limit is $50000")
+        card_no = tracker.get_slot('card_number')
+        dispatcher.utter_message(text="Your card limit is $50000. Do you need anything else? Please enter yes or no?")
 
-        return []
+        return [SlotSet('card_number',card_no)]
 
 ## Credit card limit increase 
 
@@ -49,10 +51,11 @@ class ActionRiseCardLimit(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
+        
+        card_no = tracker.get_slot('card_number')
+        dispatcher.utter_message(text="Your card limit has been raised by $10000. Do you need anything else? Please enter yes or no?")
 
-        dispatcher.utter_message(text="Your card limit has been raised by $10000")
-
-        return []
+        return [SlotSet('card_number',card_no)]
 
 # Registration/Activation/PIN
 
@@ -65,8 +68,8 @@ class ActionCardRegister(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
-
-        dispatcher.utter_message(text="Please enter your name and empolyee ID")
+        
+        dispatcher.utter_message(text="Your card has been registered. Do you need anything else? Please enter yes or no?")
         
         return []
 
@@ -79,10 +82,11 @@ class ActionCardActivation(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
-
-        dispatcher.utter_message(text="Please enter your name and empolyee ID")
         
-        return []
+        card_no = tracker.get_slot('card_number')
+        dispatcher.utter_message(text="Your card has been activated. Do you need anything else? Please enter yes or no?")
+        
+        return [SlotSet('card_number',card_no)]
 
 ## Reset PIN
 
@@ -93,10 +97,11 @@ class ActionResetPIN(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
+        
+        card_no = tracker.get_slot('card_number')
+        dispatcher.utter_message(text="Your PIN has been changed. Do you need anything else? Please enter yes or no?")
 
-        dispatcher.utter_message(text="Your PIN has been changed")
-
-        return []
+        return [SlotSet('card_number',card_no)]
 
 # Lost / Fraudulent card 
 
@@ -109,10 +114,10 @@ class ActionLostCard(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
-
-        dispatcher.utter_message(text="To deactivate stolen card, please enter your card number")
-
-        return []
+        card_no = tracker.get_slot('card_number')
+        dispatcher.utter_message(text="Your card has been deactivated. Do you need anything else? Please enter yes or no")
+        
+        return [SlotSet('card_number',card_no)]
 
 ## Fraudulent charges
 
@@ -123,10 +128,11 @@ class ActionFraudCharges(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
-
-        dispatcher.utter_message(text="Please enter your credit card number")
         
-        return []
+        card_no = tracker.get_slot('card_number')
+        dispatcher.utter_message(text="We have sent mail to you about fraud charges. Do you need anything else? Please enter yes or no.")
+        
+        return [SlotSet('card_number',card_no)]
 
 # Other
 
@@ -140,9 +146,10 @@ class ActionCardPayment(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
 
-        dispatcher.utter_message(text="How much you want make a personal payment")
+        card_no = tracker.get_slot('card_number')
+        dispatcher.utter_message(text="We have done card payment for your personal usage. Do you need anything else?. Please enter yes or no")
 
-        return []
+        return [SlotSet('card_number',card_no)]
 
 ## Card Statement/Usage history
 
@@ -154,9 +161,10 @@ class ActionCardHistory(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
 
-        dispatcher.utter_message(text="Your card history has been sent to your email")
+        card_no = tracker.get_slot('card_number')
+        dispatcher.utter_message(text="Your card history has been sent to your email. Do you need anything else? Please enter yes or no")
 
-        return []
+        return [SlotSet('card_number',card_no)]
 
 ## Card Replacement
 
@@ -167,10 +175,11 @@ class ActionCardRenewal(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
+        
+        card_no = tracker.get_slot('card_number')
+        dispatcher.utter_message(text="Your card has been replaced. Do you need anything else?. Please enter yes or no")
 
-        dispatcher.utter_message(text="Your card has been replaced with card number xxxxx")
-
-        return []
+        return [SlotSet('card_number',card_no)]
 
 ## Card billing address update
 
@@ -181,10 +190,11 @@ class ActionCardBillingAddress(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
+        
+        card_no = tracker.get_slot('card_number')
+        dispatcher.utter_message(text="Your card billing address has been updated. Do you need anything else? Please enter yes or no")
 
-        dispatcher.utter_message(text="Your card billing address has been updated")
-
-        return []
+        return [SlotSet('card_number',card_no)]
 
 ## Card Management Policy
 
@@ -196,6 +206,7 @@ class ActionCardPolicy(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
             domain: Dict[Text, Any]):
 
-        dispatcher.utter_message(text="Your card policy has been sent to your email")
+        card_no = tracker.get_slot('card_number')
+        dispatcher.utter_message(text="Your card policy has been sent to your email. Do you need anything else? Please enter yes or no")
 
-        return []
+        return [SlotSet('card_number',card_no)]
