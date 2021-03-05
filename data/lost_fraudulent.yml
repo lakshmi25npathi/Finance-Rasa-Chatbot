@@ -1,0 +1,22 @@
+version: "2.0"
+
+nlu:
+- intent: lost_stolen_card
+  examples:
+     - I lost my card 
+     - I lost a card 
+     - My card got stolen 
+     - I cannot find a card 
+     - I have lost my credit card 
+     - lost card
+     
+- intent: frudulent_charges
+  examples: 
+     - I want to know about my card unauthorized charges 
+     - Please let me know unauthorized charges for my card 
+     - I would like to know about fraud charges for my card
+     - Can you give information about unauthorized charges for my card?
+     - I want to know about my card unsual charges 
+     - Please let me know unsual charges for my card 
+     - Can you give information about fraudulent charges for my card?
+     - I would like  to know about my card fraudulent charges

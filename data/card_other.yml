@@ -1,0 +1,67 @@
+version: "2.0"
+
+nlu:
+- intent: card_payment
+  examples:
+     - I want to use this card for my personal 
+     - How to make a payment for my personal usage?
+     - How to make a personal payment?
+     - How to pay off for personal purpose?
+     - I would like to make a personal payment
+     - Can you make a personal payment?
+     - used card for personal 
+     - personal payment 
+
+- intent: card_history
+  examples:
+     - I want to know about my card history
+     - card history
+     - card activity 
+     - transaction history
+     - bank statement 
+     - Can you show me transaction history?
+     - bank statement online
+     - card activities 
+     - Can you show me card history?
+     - I would like to know about my card activities
+
+- intent: card_replacement 
+  examples:
+     - I want to renew my card 
+     - my card got expired
+     - My card would expire soon
+     - Can you renew my card?
+     - I want to replace my card 
+     - I need new card 
+     - card renewal
+     - card replacement 
+     - new card 
+     - My card will be expired soon
+     - Can you replace my card?
+     - I would like to get new card
+
+- intent: card_billing_address
+  examples:
+     - I want to update my card address
+     - address
+     - update address
+     - update phone number
+     - I would like to update phone number
+     - update billing address
+     - Can you update my phone number?
+     - I would like to update billing address
+     - Can you update billing address?
+
+- intent: card_policy
+  examples:
+     - I want to know about card policy 
+     - card for policy
+     - card policy
+     - Can you inform me about card policy?
+     - I would like to know about card for policy
+     - card management policy
+     - I want to know about card management policy
+     - Can you inform me about card management policy?
+     - I would like to know about card management policy
+
+

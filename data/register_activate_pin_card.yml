@@ -1,0 +1,35 @@
+version: "2.0"
+
+nlu:
+- intent: card_registeration
+  examples:
+     - I want to register card 
+     - I want to do card registeration 
+     - I would like to register corporate card
+     - card registeration
+     - register card 
+     - register corporate card 
+     - card account registeration 
+     - I want to register corporate card 
+     - I would like to do card account registeration
+     
+- intent: card_activation
+  examples:
+     - I want to activate my card 
+     - card activation 
+     - I would like to activate my card
+     - activate a card
+     - card activate
+     - Can you activate my card?
+     - Please activate a card 
+     - card verification
+     
+- intent: card_PIN_reset
+  examples:
+     - Please setup card PIN 
+     - Can you reset my card PIN?
+     - I would like to setup my card PIN
+     - I want to setup my card PIN 
+     - I would like to reset my card PIN number
+     - Can you setup my card PIN number?
+     

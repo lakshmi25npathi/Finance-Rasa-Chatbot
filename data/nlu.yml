@@ -1,0 +1,69 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: deny
+  examples: |
+    - no
+    - no thanks
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: continue
+  examples: |
+    - yes
+    - yess
+    - yes thanks
+    - yeah
+    - haa
+
+- intent: employee_name
+  examples: |
+    - [Joseph](name)
+    - [Alex](name)
+    - [Sonu](name)
+    - [Bannu](name)
+    - [Baby](name)
+    - [Jack](name)
+
+- intent: employee_id
+  examples: |
+    - [245](id)
+    - [265](id)
+    - [276](id)
+    - [287](id)
+    - [291](id)
+    - [298](id)
+    

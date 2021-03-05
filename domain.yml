@@ -1,0 +1,71 @@
+version: "2.0"
+
+intents:
+  - greet
+  - continue
+  - deny
+  - employee_name
+  - employee_id
+  - card_application
+  - available_card_limit
+  - increase_card_limit
+  - card_registeration
+  - card_activation
+  - card_PIN_reset
+  - lost_stolen_card
+  - frudulent_charges
+  - card_payment
+  - card_history
+  - card_replacement
+  - card_billing_address
+  - card_policy
+  - goodbye
+
+actions:
+  - utter_greet
+  - utter_continue
+  - utter_deny
+  - action_card_application
+  - action_CardLimit
+  - action_RiseCardLimit
+  - action_CardRegister
+  - action_CardActivation
+  - action_ResetPIN
+  - action_LostCard
+  - action_FraudCharges
+  - action_CardPayment
+  - action_CardHistory
+  - action_CardRenewal
+  - action_CardBillingAddress
+  - action_CardPolicy
+  - utter_goodbye
+
+entities:
+  - name
+  - id
+
+forms:
+  card_registration_form:
+    employee_name:
+      - type: from_entity
+        entity: name
+    employee_id:
+      - type: from_entity
+        entity: id
+
+responses:
+  utter_greet:
+  - text: "Hi, how do I help you?"
+
+  utter_continue:
+  - text: "Do you need anything else? Yes or No"  
+
+  utter_deny:
+  - text: "Thanks for visiting"
+
+  utter_goodbye:
+  - text: "Bye"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
